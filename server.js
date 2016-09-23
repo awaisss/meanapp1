@@ -16,9 +16,11 @@ app.use(function(req, res, next) {
     next();
 });
 
-router.get("/api",function(req,res){
-    res.json({"error" : false,"message" : "Hello to Meanjs App"});
+router.get("/",function(req,res){
+    res.sendFile(__dirname + '/index.html');
 });
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/bower_components'));
 
 
 // Get api --- Get all students from database

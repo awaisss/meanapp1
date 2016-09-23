@@ -1,0 +1,16 @@
+.table_container h3 {
+	text-align: center;
+}
+.table_container table thead tr th{
+	text-align: center;
+}
+.table_container table tbody tr td {
+	text-align: center;
+}
+.parent_container {
+	margin:20px;
+
+}
+.table_container h3{
+	color:blue;
+}

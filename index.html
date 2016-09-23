@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" ng-app= "myApp">
+<head>
+<meta charset="utf-8"/>
+<title>Mean Stack</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+<script type="text/javascript" src = "/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src = "/bootstrap/dist/js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-cookies.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-messages.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-sanitize.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+<script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+ -->
+<script type="text/javascript" src="/scripts/dirPagination.js"></script>
+
+<script type="text/javascript" src = "/js/config.js"></script>
+<script type="text/javascript" src = "/js/controllers/mycontroller.js"></script>
+
+
+
+</head>
+
+
+<body class="" ng-controller = "myController">
+
+
+
+<div class="parent_container" >
+	<div class="parent_container_data row">
+		<div class="col-md-9 form_container" ng-show = "editFlag || addFlag">
+			<h3> 
+				<span ng-show = "addFlag">Add New</span>
+				<span ng-show = "editFlag">Update</span>
+				<span>User</span> 
+			</h3>	
+		</div>
+
+		<div class="col-md-9" ng-show = "!editFlag && addFlag">
+			<div class="table-responsive table_container">
+				<h3><u>Users Details Table</u></h3>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Department</th>
+							<th>Registeration Number</th>
+							<th>Tag No</th>
+							<th>Edit/Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat = "user in users">
+							<td>
+								<span>{{ user.name }}</span>
+							</td>
+							<td>
+								<span>{{ user.dept }}</span>
+							</td>
+							<td>
+								<span>{{ user.reg_no }}</span>
+							</td>
+							<td>
+								<span>{{ user.tag_no }}</span>
+							</td>
+							<td>
+								<span style="color:blue;font-size:19px;margin-right:10px"
+								ng-click = "editUser(user)">
+									<i class="fa fa-pencil" aria-hidden="true"></i>
+								</span>
+								<span style="color:red;font-size:19px"
+								ng-click = "deleteUser(user)">
+									<i class="fa fa-trash" aria-hidden="true"></i>
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+</body>
+
+</html>
